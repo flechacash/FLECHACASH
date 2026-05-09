@@ -1,75 +1,152 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ht">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FlechaCash Transfer | MonCash, NatCash & Minit Haiti</title>
-
+  <title>FlechaCash</title>
   <style>
-    body{
-      margin:0;
-      padding:0;
-      background:#0d1117;
-      color:white;
-      font-family:Arial;
-      text-align:center;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
     }
 
-    .container{
-      padding:50px 20px;
+    .topbar {
+      background: #0877c9;
+      color: white;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    h1{
-      color:#00ff99;
-      font-size:50px;
+    .menu {
+      font-size: 26px;
     }
 
-    p{
-      font-size:20px;
-      margin-top:20px;
+    .phone {
+      font-size: 22px;
     }
 
-    .btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:15px 30px;
-      background:#25D366;
-      color:white;
-      text-decoration:none;
-      border-radius:10px;
-      font-size:20px;
+    .container {
+      max-width: 520px;
+      margin: 25px auto;
+      padding: 0 15px;
+      text-align: center;
     }
 
-    .services{
-      margin-top:40px;
-      font-size:22px;
-      line-height:2;
+    h1 {
+      color: #0877c9;
+      margin-bottom: 4px;
+    }
+
+    .number {
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .balance-card {
+      background: linear-gradient(135deg, #12a7e8, #0877c9);
+      color: white;
+      border-radius: 10px;
+      text-align: left;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      margin-bottom: 16px;
+    }
+
+    .label {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .amount {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: #0877c9;
+      color: white;
+      padding: 14px;
+      margin: 8px 0;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      background: #065f9f;
+    }
+
+    .movement {
+      margin-top: 18px;
+      background: linear-gradient(135deg, #19b5e8, #0b8dd6);
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      text-align: left;
+    }
+
+    .movement h3 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .ticket {
+      background: white;
+      color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .status {
+      color: #0877c9;
+      font-weight: bold;
     }
   </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="topbar">
+    <div class="menu">☰</div>
+    <div class="phone">📞</div>
+  </div>
 
-<h1>FLECHACASH</h1>
+  <div class="container">
+    <h1>FlechaCash</h1>
+    <div class="number">+52 9617163082</div>
 
-<p>
-Voye MonCash, NatCash ak minit Haiti rapid ak sekirite.
-</p>
+    <div class="balance-card">
+      <div class="label">Solde du vendeur</div>
+      <div class="amount">MXN $0.00</div>
 
-<div class="services">
-✅ MonCash<br>
-✅ NatCash<br>
-✅ Digicel minutes<br>
-✅ Transfè rapid Haiti
-</div>
+      <div class="label">Retenu</div>
+      <div class="amount">MXN $0.00</div>
+    </div>
 
-<a class="btn" href="https://wa.me/529617163082>
-Kontakte nou sou WhatsApp
-</a>
+    <a class="btn" href="https://wa.me/529617163082">MONCASH</a>
+    <a class="btn" href="https://wa.me/529617163082">NATCASH</a>
+    <a class="btn" href="https://wa.me/529617163082">TOP UP</a>
+    <a class="btn" href="https://wa.me/529617163082">DEPOSIT</a>
+    <a class="btn" href="https://wa.me/529617163082">PARYAJ PAM</a>
 
-</div>
+    <div class="movement">
+      <h3>Mouvements</h3>
+
+      <div class="ticket">
+        <strong>#FLECHA001</strong><br>
+        MonCash / NatCash / Top Up<br>
+        <span class="status">✓ Transaction disponible</span>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
