@@ -4,150 +4,167 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlechaCash</title>
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #111111, #2B2B2B);
-      color: #222;
+      background: linear-gradient(135deg, #111111, #2B2B2B);
+      color: white;
+      min-height: 100vh;
     }
 
     .topbar {
       background: #FF3B3B;
-      color: white;
-      padding: 14px 18px;
+      padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-
-    .menu {
-      font-size: 26px;
-    }
-
-    .phone {
-      font-size: 22px;
+      justify-content: space-between;
+      color: white;
+      font-size: 24px;
     }
 
     .container {
-      max-width: 520px;
-      margin: 25px auto;
-      padding: 0 15px;
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px 20px;
       text-align: center;
     }
 
-    h1 {
-      color: #0877c9;
-      margin-bottom: 4px;
+    .logo {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
 
-    .number {
-      color: #777;
-      margin-bottom: 20px;
+    h1 {
+      font-size: 42px;
+      margin-bottom: 5px;
+      color: #FF3B3B;
+    }
+
+    .phone {
+      color: #cccccc;
+      margin-bottom: 25px;
     }
 
     .balance-card {
-      background: linear-gradient(135deg, #12a7e8, #0877c9);
-      color: white;
-      border-radius: 10px;
-      text-align: left;
+      background: #1E1E1E;
+      border: 1px solid #FF3B3B;
+      border-radius: 15px;
       padding: 25px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      margin-bottom: 16px;
+      text-align: left;
+      margin-bottom: 25px;
+      box-shadow: 0 0 15px rgba(255, 59, 59, 0.3);
     }
 
-    .label {
-      font-size: 15px;
-      opacity: 0.9;
+    .balance-card p {
+      color: #bbbbbb;
+      margin-bottom: 5px;
     }
 
-    .amount {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 14px;
+    .balance-card h2 {
+      margin-bottom: 20px;
+      font-size: 38px;
+      color: white;
     }
 
     .btn {
       display: block;
       width: 100%;
-      background: #0877c9;
+      background: #1E1E1E;
+      border: 1px solid #FF3B3B;
       color: white;
-      padding: 14px;
-      margin: 8px 0;
-      border-radius: 4px;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
-      letter-spacing: 0.5px;
+      font-size: 18px;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #065f9f;
+      background: #FF3B3B;
+      transform: scale(1.02);
     }
 
     .movement {
-      margin-top: 18px;
-     background: #1E1E1E;
-border: 1px solid #FF3B3B;
-      border-radius: 10px;
+      margin-top: 25px;
+      background: #1E1E1E;
+      border: 1px solid #FF3B3B;
+      border-radius: 15px;
       padding: 20px;
-      color: white;
       text-align: left;
+      box-shadow: 0 0 15px rgba(255, 59, 59, 0.3);
     }
 
     .movement h3 {
       text-align: center;
-      margin-top: 0;
+      margin-bottom: 20px;
+      color: white;
     }
 
     .ticket {
-      background: #1E1E1E;
-border: 1px solid #FF3B3B;
-      color: #333;
+      background: #111111;
+      border: 1px solid #FF3B3B;
+      border-radius: 10px;
       padding: 15px;
-      border-radius: 8px;
-      margin-top: 15px;
+      color: white;
     }
 
     .status {
       color: #FF3B3B;
       font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
   <div class="topbar">
-    <div class="menu">☰</div>
-    <div class="phone">📞</div>
+    ☰
+    <span>FlechaCash</span>
+    ☎️
   </div>
 
   <div class="container">
+
+    <div class="logo">💸</div>
+
     <h1>FlechaCash</h1>
-    <div class="number">+52 9617163082</div>
+    <p class="phone">+52 9617163082</p>
 
     <div class="balance-card">
-      <div class="label">Solde du vendeur</div>
-      <div class="amount">MXN $0.00</div>
+      <p>Solde du vendeur</p>
+      <h2>MXN $0.00</h2>
 
-      <div class="label">Retenu</div>
-      <div class="amount">MXN $0.00</div>
+      <p>Retenu</p>
+      <h2>MXN $0.00</h2>
     </div>
 
-    <a class="btn" href="https://wa.me/529617163082">MONCASH</a>
-    <a class="btn" href="https://wa.me/529617163082">NATCASH</a>
-    <a class="btn" href="https://wa.me/529617163082">TOP UP</a>
-    <a class="btn" href="https://wa.me/529617163082">DEPOSIT</a>
-    <a class="btn" href="https://wa.me/529617163082">PARYAJ PAM</a>
+    <a href="#" class="btn">MONCASH</a>
+    <a href="#" class="btn">NATCASH</a>
+    <a href="#" class="btn">TOP UP</a>
+    <a href="#" class="btn">DEPOSIT</a>
+    <a href="#" class="btn">PARYAJ PAM</a>
 
     <div class="movement">
       <h3>Mouvements</h3>
 
       <div class="ticket">
         <strong>#FLECHA001</strong><br>
-        MonCash / NatCash / Top Up<br>
-        <span class="status">✓ Transaction disponible</span>
+        MonCash / NatCash / Top Up
+
+        <div class="status">✔️ Transaction disponible</div>
       </div>
     </div>
+
   </div>
 
 </body>
