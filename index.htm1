@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FLECHACASH</title>
+  <title>FLECHACASH</title>
 </head>
 
-<body style="margin:0;background:#111;color:white;font-family:Arial;text-align:center;">
+<body style="margin:0;background:#07111f;color:white;font-family:Arial;text-align:center;">
 
-<div style="padding:60px;">
+  <div style="padding:70px 20px;">
 
-<h1 style="color:#00ff99;font-size:50px;">
-FLECHACASH
-</h1>
+    <h1 style="color:#00ff99;font-size:52px;margin-bottom:10px;">
+      FLECHACASH
+    </h1>
 
-<p style="font-size:22px;">
-Voye lajan Ayiti rapid ak sekirite
-</p>
+    <p style="font-size:24px;">
+      Voye lajan Ayiti rapid ak sekirite
+    </p>
 
-<p style="font-size:20px;color:#ffcc00;">
-MonCash • NatCash • Minit
-</p>
+    <p style="font-size:22px;color:#ffcc00;">
+      MonCash • NatCash • Minit
+    </p>
 
-<a href="https://wa.me/">
-<button style="
-padding:15px 35px;
-font-size:20px;
-background:#25D366;
-border:none;
-border-radius:10px;
-color:white;
-cursor:pointer;">
-Kontakte WhatsApp
-</button>
-</a>
+    <a href="https://wa.me/" target="_blank">
+      <button style="padding:16px 35px;font-size:20px;background:#25D366;border:none;border-radius:12px;color:white;cursor:pointer;">
+        Kontakte sou WhatsApp
+      </button>
+    </a>
 
-</div>
+  </div>
 
 </body>
 </html>
