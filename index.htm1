@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ht">
 <head>
-  <title>FLECHACASH</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLECHACASH</title>
 
-<body style="margin:0;background:#07111f;color:white;font-family:Arial;text-align:center;">
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#0b1020;
+    font-family:Arial, sans-serif;
+    color:white;
+    text-align:center;
+}
 
-  <div style="padding:70px 20px;">
+.container{
+    padding:60px 20px;
+}
 
-    <h1 style="color:#00ff99;font-size:52px;margin-bottom:10px;">
-      FLECHACASH
-    </h1>
+h1{
+    font-size:55px;
+    color:#00aaff;
+    margin-bottom:10px;
+}
 
-    <p style="font-size:24px;">
-      Voye lajan Ayiti rapid ak sekirite
-    </p>
+p{
+    font-size:22px;
+}
 
-    <p style="font-size:22px;color:#ffcc00;">
-      MonCash • NatCash • Minit
-    </p>
+.box{
+    background:#11182d;
+    padding:25px;
+    border-radius:20px;
+    margin-top:30px;
+}
 
-    <a href="https://wa.me/" target="_blank">
-      <button style="padding:16px 35px;font-size:20px;background:#25D366;border:none;border-radius:12px;color:white;cursor:pointer;">
-        Kontakte sou WhatsApp
-      </button>
-    </a>
-
-  </div>
-
-</body>
-</html>
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#00aaff;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    border-radius:12px
