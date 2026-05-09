@@ -1,47 +1,76 @@
+
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLECHACASH</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLECHACASH</title>
 
-<style>
-body{
-    margin:0;
-    padding:0;
-    background:#0b1020;
-    font-family:Arial, sans-serif;
-    color:white;
-    text-align:center;
-}
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      background:#0d1117;
+      color:white;
+      font-family:Arial;
+      text-align:center;
+    }
 
-.container{
-    padding:60px 20px;
-}
+    .container{
+      padding:50px 20px;
+    }
 
-h1{
-    font-size:55px;
-    color:#00aaff;
-    margin-bottom:10px;
-}
+    h1{
+      color:#00ff99;
+      font-size:50px;
+    }
 
-p{
-    font-size:22px;
-}
+    p{
+      font-size:20px;
+      margin-top:20px;
+    }
 
-.box{
-    background:#11182d;
-    padding:25px;
-    border-radius:20px;
-    margin-top:30px;
-}
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 30px;
+      background:#25D366;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      font-size:20px;
+    }
 
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    background:#00aaff;
-    color:white;
-    text-decoration:none;
-    font-size:20px;
-    border-radius:12px
+    .services{
+      margin-top:40px;
+      font-size:22px;
+      line-height:2;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>FLECHACASH</h1>
+
+<p>
+Voye MonCash, NatCash ak minit Haiti rapid ak sekirite.
+</p>
+
+<div class="services">
+✅ MonCash<br>
+✅ NatCash<br>
+✅ Digicel minutes<br>
+✅ Transfè rapid Haiti
+</div>
+
+<a class="btn" href="https://wa.me/525500000000">
+Kontakte nou sou WhatsApp
+</a>
+
+</div>
+
+</body>
+</html>
