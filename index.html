@@ -16,132 +16,195 @@
 
         .container {
             max-width: 450px;
-            margin: auto;
-            padding: 15px;
+            margin: 50px auto;
+            padding: 20px;
         }
 
         .logo {
-            display: block;
-            margin: 0 auto 10px auto;
-            width: 120px;
-            height: auto;
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
         h1 {
-            color: #FF6838;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .balance-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 20px;
+            color: #FF683B;
+            font-size: 46px;
+            margin-bottom: 5px;
         }
 
         .balance-card {
             background: #1A1A1A;
             border: 1px solid #C0392B;
-            border-radius: 12px;
-            padding: 15px;
-            flex: 1;
+            border-radius: 16px;
+            padding: 25px;
             text-align: left;
-        }
-
-        .balance-card h2 {
-            margin-top: 0;
-            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
         }
 
         .balance-card p {
-            font-size: 16px;
-            margin: 5px 0 0 0;
-        }
-
-        .actions button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 8px;
-            background-color: #FF6838;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .actions button:hover {
-            background-color: #e65c1f;
-        }
-
-        .pariage-section {
-            margin-top: 20px;
-            background-color: #1A1A1A;
-            border: 1px solid #FF6838;
-            border-radius: 12px;
-            padding: 15px;
-        }
-
-        .pariage-section h2 {
+            margin: 10px 0;
             font-size: 18px;
-            margin-top: 0;
-            color: #FF6838;
         }
 
-        .pariage-section p {
-            font-size: 16px;
-            margin: 5px 0 0 0;
+        .flecha-pariage {
+            background: #FF683B;
+            color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
         }
 
-        @media (max-width: 400px) {
-            .balance-grid {
-                flex-direction: column;
-            }
+        .contact-button {
+            background: #0D6EFD;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px 0 5px;
+        }
+
+        .contact-button:hover, .flecha-pariage:hover {
+            opacity: 0.85;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #1A1A1A;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 16px;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .modal-content h2 {
+            color: #FF683B;
+            margin-bottom: 15px;
+        }
+
+        .modal-content label {
+            display: block;
+            margin: 10px 0 5px 0;
+        }
+
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .modal-content button {
+            background-color: #FF683B;
+            color: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal-content button:hover {
+            opacity: 0.85;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="FlechaCash Logo" class="logo">
-        <h1>FlechaCash</h1>
+        <div class="logo">FlechaCash</div>
+        <h1>Dashboard</h1>
 
-        <div class="balance-grid">
-            <div class="balance-card">
-                <h2>Solde du vendeur</h2>
-                <p>MXN $0.00</p>
-            </div>
-            <div class="balance-card">
-                <h2>Retenu</h2>
-                <p>MXN $0.00</p>
-            </div>
+        <div class="balance-card">
+            <p>Solde du vendeur</p>
+            <p>MXN $0.00</p>
+            <p>Retenu</p>
+            <p>MXN $0.00</p>
         </div>
 
-        <div class="pariage-section">
+        <!-- Flecha PARIAGE Modal Trigger -->
+        <div class="flecha-pariage" id="openModal">Flecha PARIAGE</div>
+
+        <!-- Contact / Social Buttons -->
+        <a class="contact-button" href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a class="contact-button" href="https://www.tiktok.com/" target="_blank">TikTok</a>
+        <a class="contact-button" href="https://www.facebook.com/" target="_blank">Facebook</a>
+        <a class="contact-button" href="https://wa.me/" target="_blank">WhatsApp</a>
+    </div>
+
+    <!-- Modal Content -->
+    <div id="pariageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
             <h2>Flecha PARIAGE</h2>
-            <p>Jwe ak ekip ou a epi swiv rezilta yo fasil!</p>
-        </div>
+            <form id="pariageForm">
+                <label for="name">Non:</label>
+                <input type="text" id="name" name="name" required>
 
-        <div class="actions">
-            <button onclick="openContact()">Kontakte Mwen</button>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Voye</button>
+            </form>
         </div>
     </div>
 
     <script>
-        function openContact() {
-            const contactLinks = [
-                "https://www.tiktok.com/@username",
-                "https://www.instagram.com/username",
-                "https://www.facebook.com/username",
-                "https://wa.me/529617163082"
-            ];
-            let msg = "Kontakte mwen sou: \n";
-            contactLinks.forEach((link, index) => {
-                msg += `${index + 1}. ${link}\n`;
-            });
-            alert(msg);
+        const modal = document.getElementById("pariageModal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+
+        openModal.onclick = function() {
+            modal.style.display = "block";
         }
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Form submission
+        document.getElementById("pariageForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            alert("Mèsi! Mesaj ou a voye. Ou ka ajoute koneksyon reyèl ak email ou apre sa.");
+            modal.style.display = "none";
+            this.reset();
+        });
     </script>
 </body>
 </html>
