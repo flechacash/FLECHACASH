@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,86 +9,117 @@
 <style>
 
 body{
-    margin:0;
-    padding:0;
-    background:#f4f7fb;
-    font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
+  background:#f4f7fb;
+  font-family:Arial, sans-serif;
 }
 
-.header{
-    background:linear-gradient(90deg,#007bff,#00c6ff);
-    color:white;
-    padding:15px;
-    font-size:28px;
-    font-weight:bold;
-    text-align:center;
+.topbar{
+  height:55px;
+  background:linear-gradient(90deg,#007bff,#00c6ff);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  color:white;
+}
+
+.menu-icon{
+  font-size:28px;
+  cursor:pointer;
+}
+
+.call-icon{
+  font-size:24px;
+  cursor:pointer;
+}
+
+.title{
+  font-size:26px;
+  font-weight:bold;
 }
 
 .container{
-    width:90%;
-    max-width:500px;
-    margin:30px auto;
+  width:90%;
+  max-width:500px;
+  margin:30px auto;
 }
 
 .card{
-    background:linear-gradient(135deg,#29b6ff,#0099ff);
-    border-radius:12px;
-    padding:25px;
-    color:white;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  position:relative;
+  background:linear-gradient(135deg,#29b6ff,#0099ff);
+  border-radius:12px;
+  padding:25px;
+  color:white;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.eye{
+  position:absolute;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:26px;
+  cursor:pointer;
 }
 
 .balance{
-    font-size:16px;
-    margin-bottom:10px;
+  font-size:16px;
+  margin-bottom:10px;
 }
 
 .amount{
-    font-size:34px;
-    font-weight:bold;
+  font-size:34px;
+  font-weight:bold;
 }
 
 .menu{
-    margin-top:20px;
+  margin-top:20px;
 }
 
 .btn{
-    width:100%;
-    padding:15px;
-    margin-top:10px;
-    border:none;
-    border-radius:10px;
-    background:#1e88ff;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:#1e88ff;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .btn:hover{
-    background:#006eff;
-    transform:scale(1.02);
+  background:#006eff;
+  transform:scale(1.02);
 }
 
 .footer{
-    margin-top:25px;
-    background:#29b6ff;
-    padding:18px;
-    border-radius:10px;
-    text-align:center;
-    color:white;
-    font-weight:bold;
+  margin-top:25px;
+  background:#29b6ff;
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+  color:white;
+  font-weight:bold;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="header">
-FlechaCash
+<div class="topbar">
+
+<div class="menu-icon">☰</div>
+
+<div class="title">FlechaCash</div>
+
+<div class="call-icon">📞</div>
+
 </div>
 
 <div class="container">
@@ -112,6 +143,8 @@ Retenu
 <div class="amount">
 MXN $0.00
 </div>
+
+<div class="eye">👁️</div>
 
 </div>
 
