@@ -3,373 +3,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FlechaCash Dashboard</title>
 
 <style>
 
 body{
-  margin:0;
-  padding:0;
-  background:#f4f7fb;
-  font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+background:#f4f7fb;
+font-family:Arial,sans-serif;
 }
 
 .topbar{
-  height:55px;
-  background:linear-gradient(90deg,#007bff,#00c6ff);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 18px;
-  color:white;
-}
-
-.menu-icon{
-  font-size:28px;
-  cursor:pointer;
-  color:white;
-}
-
-.title{
-  font-size:26px;
-  font-weight:bold;
+height:60px;
+background:linear-gradient(90deg,#007bff,#00c6ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+font-weight:bold;
 }
 
 .container{
-  width:90%;
-  max-width:500px;
-  margin:30px auto;
+padding:20px;
 }
 
 .card{
-  position:relative;
-  background:linear-gradient(135deg,#29b6ff,#0099ff);
-  border-radius:12px;
-  padding:25px;
-  color:white;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+background:linear-gradient(90deg,#007bff,#00c6ff);
+padding:25px;
+border-radius:20px;
+color:white;
+margin-bottom:25px;
 }
 
-.eye{
-  position:absolute;
-  right:22px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:26px;
-  cursor:pointer;
+.card h2{
+margin:0;
+font-size:18px;
 }
 
-.balance{
-  font-size:16px;
-  margin-bottom:10px;
-}
-
-.amount{
-  font-size:34px;
-  font-weight:bold;
-}
-
-.menu{
-  margin-top:20px;
+.card h1{
+margin:10px 0;
+font-size:42px;
 }
 
 .btn{
-  width:100%;
-  padding:15px;
-  margin-top:10px;
-  border:none;
-  border-radius:10px;
-  background:#1e88ff;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
+width:100%;
+padding:18px;
+margin-bottom:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(90deg,#007bff,#00c6ff);
+color:white;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .btn:hover{
-  background:#006eff;
-  transform:scale(1.02);
-}</style>
+opacity:0.9;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:999;
+}
+
+.modal-content{
+background:white;
+width:90%;
+max-width:400px;
+margin:40px auto;
+padding:20px;
+border-radius:20px;
+}
+
+.close{
+float:right;
+font-size:28px;
+cursor:pointer;
+}
+
+select,input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.submit-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2196f3;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="topbar">
-
-<div class="menu-icon">☰</div>
-
-<div class="title">FlechaCash</div>
-
-<div class="call-icon"></div>
-
+FlechaCash
 </div>
 
 <div class="container">
 
 <div class="card">
+<h2>Solde du vendeur</h2>
+<h1>MXN $0.00</h1>
 
-<div class="balance">
-Solde du vendeur
+<h2>Retenu</h2>
+<h1>MXN $0.00</h1>
 </div>
 
-<div class="amount">
-MXN $0.00
-</div>
+<button class="btn" onclick="openModal('moncashModal')">MONCASH</button>
 
-<br>
+<button class="btn" onclick="openModal('natcashModal')">NATCASH</button>
 
-<div class="balance">
-Retenu
-</div>
+<button class="btn">TOP UP</button>
 
-<div class="amount">
-MXN $0.00
-</div>
+<button class="btn">DEPOSIT</button>
 
-<div class="eye">👁️</div>
+<button class="btn">SGL PARIAGE</button>
 
 </div>
 
-<div class="menu">
+<!-- MONCASH -->
 
-<button class="btn" onclick="openMoncash()">MONCASH</button>
+<div id="moncashModal" class="modal">
 
-<button class="btn" onclick="openNatcash()">NATCASH</button>
+<div class="modal-content">
 
-<button class="btn" onclick="openTopup()">TOP UP</button>
+<span class="close" onclick="closeModal('moncashModal')">&times;</span>
 
-<button class="btn" onclick="openDeposit()">DEPOSIT</button>
+<h2>MonCash</h2>
 
-<button class="btn" onclick="openPariage()">SGL PARIAGE</button>
-
-</div>
-
-<div class="footer">
-Movements
-</div>
-
-</div>
-<div id="moncashModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);">
-
-  <div style="background:white; width:300px; margin:60px auto; padding:20px; border-radius:15px;">
-
-    <span onclick="closeMoncash()" style="float:right; cursor:pointer; font-size:20px;">X</span>
-<option>🇭🇹 Haïti +509</option>
- <input type="text" placeholder="Expéditeur" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <input type="text" placeholder="Téléphone" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <input type="text" placeholder="Bénéficiaire" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
-      Soumettre
-    </button>
-
-  </div>
-
-</div>
-
-<script>
-
-function openMoncash() {
-  document.getElementById("moncashModal").style.display = "block";
-}
-
-function closeMoncash() {
-  document.getElementById("moncashModal").style.display = "none";
-}
-
-</script><div id="natcashModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
-
-  <div style="background:white; width:300px; margin:60px auto; padding:20px; border-radius:15px;">
-
-    <span onclick="closeNatcash()" style="float:right; cursor:pointer; font-size:20px;">X</span>
-<select onchange="countrySelected(this.value)" style="width:100%; padding:12px; margin-bottom:10px; border-radius:10px;">
-
+<select onchange="countrySelected(this.value)">
 <option value="">Choisir un pays</option>
-
-<option>HT Haïti +509</option>
-<option>DO République Dominicaine +1</option>
-<option>CU Cuba +53</option> 
-<option>🇺🇸 United States +1</option>
-<option>🇨🇦 Canada +1</option>
-<option>🇲🇽 México +52</option>
-
-<option>🇨🇴 Colombia +57</option>
-<option>🇻🇪 Venezuela +58</option>
-<option>🇧🇷 Brazil +55</option>
-<option>🇦🇷 Argentina +54</option>
-<option>🇨🇱 Chile +56</option>
-<option>🇵🇪 Perú +51</option>
-<option>🇪🇨 Ecuador +593</option>
-
-<option>🇫🇷 France +33</option>
-<option>🇪🇸 España +34</option>
-<option>🇮🇹 Italia +39</option>
-<option>🇩🇪 Allemagne +49</option>
-<option>🇵🇹 Portugal +351</option>
-
-<option>🇨🇳 Chine +86</option>
-<option>🇯🇵 Japon +81</option>
-<option>🇰🇷 Corée du Sud +82</option>
-
-<option>🇬🇭 Ghana +233</option>
-<option>🇳🇬 Nigeria +234</option>
-<option>🇨🇲 Cameroun +237</option>
-<option>🇸🇳 Sénégal +221</option>
-    <input type="text" placeholder="Expéditeur" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Téléphone" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Bénéficiaire" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
-      Soumettre
-    </button>
-
-  </div>
-</div>
-
-<div id="topupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
-
-  <div style="background:white; width:300px; margin:60px auto; padding:20px; border-radius:15px;">
-
-    <span onclick="closeTopup()" style="float:right; cursor:pointer; font-size:20px;">X</span>
-
-    <h2 style="text-align:center;">Top Up</h2>
-
-    <input type="text" placeholder="Pays" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Nom du client" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Téléphone à recharger" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Compagnie" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
-      Soumettre
-    </button>
-
-  </div>
-</div>
-
-<script>
-function openNatcash() {
-  document.getElementById("natcashModal").style.display = "block";
-}
-
-function closeNatcash() {
-  document.getElementById("natcashModal").style.display = "none";
-}
-
-function openTopup() {
-  document.getElementById("topupModal").style.display = "block";
-}
-
-function closeTopup() {
-  document.getElementById("topupModal").style.display = "none";
-}
-</script><div id="depositModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
-
-  <div style="background:white; width:300px; margin:60px auto; padding:20px; border-radius:15px;">
 
 <option>🇭🇹 Haïti +509</option>
 <option>🇩🇴 République Dominicaine +1</option>
 <option>🇨🇺 Cuba +53</option>
 <option>🇯🇲 Jamaïque +1</option>
-<option>🇧🇸 Bahamas +1</option>
+<option>🇺🇸 United States +1</option>
+<option>🇨🇦 Canada +1</option>
+<option>🇲🇽 México +52</option>
+<option>🇨🇴 Colombia +57</option>
+<option>🇧🇷 Brazil +55</option>
+<option>🇦🇷 Argentina +54</option>
+<option>🇨🇱 Chile +56</option>
 
+</select>
+
+<input type="text" placeholder="Expéditeur">
+
+<input type="text" placeholder="Téléphone">
+
+<input type="text" placeholder="Bénéficiaire">
+
+<input type="number" placeholder="Montant MXN">
+
+<button class="submit-btn">
+Soumettre
+</button>
+
+</div>
+</div>
+
+<!-- NATCASH -->
+
+<div id="natcashModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('natcashModal')">&times;</span>
+
+<h2>NatCash</h2>
+
+<select onchange="countrySelected(this.value)">
+<option value="">Choisir un pays</option>
+
+<option>🇭🇹 Haïti +509</option>
+<option>🇩🇴 République Dominicaine +1</option>
+<option>🇨🇺 Cuba +53</option>
+<option>🇯🇲 Jamaïque +1</option>
 <option>🇺🇸 United States +1</option>
 <option>🇨🇦 Canada +1</option>
 <option>🇲🇽 México +52</option>
 
-<option>🇨🇴 Colombia +57</option>
-<option>🇻🇪 Venezuela +58</option>
-<option>🇧🇷 Brazil +55</option>
-<option>🇦🇷 Argentina +54</option>
-<option>🇨🇱 Chile +56</option>
-<option>🇵🇪 Perú +51</option>
-<option>🇪🇨 Ecuador +593</option>
+</select>
 
-<option>🇫🇷 France +33</option>
-<option>🇪🇸 España +34</option>
-<option>🇮🇹 Italia +39</option>
-<option>🇩🇪 Allemagne +49</option>
-<option>🇵🇹 Portugal +351</option>
+<input type="text" placeholder="Expéditeur">
 
-<option>🇨🇳 Chine +86</option>
-<option>🇯🇵 Japon +81</option>
-<option>🇰🇷 Corée du Sud +82</option>
+<input type="text" placeholder="Téléphone">
 
-<option>🇬🇭 Ghana +233</option>
-<option>🇳🇬 Nigeria +234</option>
-<option>🇨🇲 Cameroun +237</option>
-<option>🇸🇳 Sénégal +221</option>
+<input type="text" placeholder="Bénéficiaire">
 
-  </div>
+<input type="number" placeholder="Montant MXN">
 
+<button class="submit-btn">
+Soumettre
+</button>
+
+</div>
 </div>
 
 <script>
 
-function openDeposit() {
-  document.getElementById("depositModal").style.display = "block";
+function openModal(id){
+document.getElementById(id).style.display="block";
 }
 
-function closeDeposit() {
-  document.getElementById("depositModal").style.display = "none";
+function closeModal(id){
+document.getElementById(id).style.display="none";
 }
 
-</script><div id="pariageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
-
-  <div style="background:white; width:330px; margin:35px auto; padding:20px; border-radius:15px;">
-
-    <span onclick="closePariage()" style="float:right; cursor:pointer; font-size:22px;">X</span>
-
-    <h2 style="text-align:center;">SGL PARIAGE</h2>
-    <p style="text-align:center;">Chwazi bòlèt ou vle jwe a</p>
-
-    <button class="btn" onclick="openBolet('New York')">New York</button>
-    <button class="btn" onclick="openBolet('Florida')">Florida</button>
-    <button class="btn" onclick="openBolet('Georgia')">Georgia</button>
-    <button class="btn" onclick="openBolet('Loteka')">Loteka</button>
-    <button class="btn" onclick="openBolet('Dominicana')">Dominicana</button>
-    <button class="btn" onclick="openBolet('Haiti')">Haiti</button>
-    <button class="btn" onclick="openBolet('Venezuela')">Venezuela</button>
-
-  </div>
-</div>
-
-<div id="boletFormModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000;">
-
-  <div style="background:white; width:330px; margin:35px auto; padding:20px; border-radius:15px;">
-
-    <span onclick="closeBoletForm()" style="float:right; cursor:pointer; font-size:22px;">X</span>
-
-    <h2 id="boletTitle" style="text-align:center;">Bòlèt</h2>
-
-    <input type="text" placeholder="Nom du client" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="text" placeholder="Numéro joué" style="width:100%; margin-bottom:10px; padding:10px;">
-    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
-
-    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
-      Jouer
-    </button>
-
-  </div>
-</div>
-
-<script>
-function openPariage() {
-  document.getElementById("pariageModal").style.display = "block";
+function countrySelected(country){
+console.log("Pays sélectionné:",country);
 }
 
-function closePariage() {
-  document.getElementById("pariageModal").style.display = "none";
-}
+</script>
 
-function openBolet(nomBolet) {
-  document.getElementById("pariageModal").style.display = "none";
-  document.getElementById("boletTitle").innerText = nomBolet;
-  document.getElementById("boletFormModal").style.display = "block";
-}
-
+</body>
+</html>
