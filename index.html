@@ -154,7 +154,7 @@ MXN $0.00
 
 <button class="btn" onclick="openDeposit()">DEPOSIT</button>
 
-<button class="btn"> SGL PARIAGE</button>
+<button class="btn" onclick="openPariage()">SGL PARIAGE</button>
 
 </div>
 
@@ -299,6 +299,63 @@ function closeDeposit() {
   document.getElementById("depositModal").style.display = "none";
 }
 
+</script><div id="pariageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
+
+  <div style="background:white; width:330px; margin:35px auto; padding:20px; border-radius:15px;">
+
+    <span onclick="closePariage()" style="float:right; cursor:pointer; font-size:22px;">X</span>
+
+    <h2 style="text-align:center;">SGL PARIAGE</h2>
+    <p style="text-align:center;">Chwazi bòlèt ou vle jwe a</p>
+
+    <button class="btn" onclick="openBolet('New York')">New York</button>
+    <button class="btn" onclick="openBolet('Florida')">Florida</button>
+    <button class="btn" onclick="openBolet('Georgia')">Georgia</button>
+    <button class="btn" onclick="openBolet('Loteka')">Loteka</button>
+    <button class="btn" onclick="openBolet('Dominicana')">Dominicana</button>
+    <button class="btn" onclick="openBolet('Haiti')">Haiti</button>
+    <button class="btn" onclick="openBolet('Venezuela')">Venezuela</button>
+
+  </div>
+</div>
+
+<div id="boletFormModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000;">
+
+  <div style="background:white; width:330px; margin:35px auto; padding:20px; border-radius:15px;">
+
+    <span onclick="closeBoletForm()" style="float:right; cursor:pointer; font-size:22px;">X</span>
+
+    <h2 id="boletTitle" style="text-align:center;">Bòlèt</h2>
+
+    <input type="text" placeholder="Nom du client" style="width:100%; margin-bottom:10px; padding:10px;">
+    <input type="text" placeholder="Numéro joué" style="width:100%; margin-bottom:10px; padding:10px;">
+    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
+
+    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
+      Jouer
+    </button>
+
+  </div>
+</div>
+
+<script>
+function openPariage() {
+  document.getElementById("pariageModal").style.display = "block";
+}
+
+function closePariage() {
+  document.getElementById("pariageModal").style.display = "none";
+}
+
+function openBolet(nomBolet) {
+  document.getElementById("pariageModal").style.display = "none";
+  document.getElementById("boletTitle").innerText = nomBolet;
+  document.getElementById("boletFormModal").style.display = "block";
+}
+
+function closeBoletForm() {
+  document.getElementById("boletFormModal").style.display = "none";
+}
 </script>
 </body>
 </html>
