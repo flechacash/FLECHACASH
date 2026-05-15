@@ -152,7 +152,7 @@ MXN $0.00
 
 <button class="btn" onclick="openTopup()">TOP UP</button>
 
-<button class="btn"> DEPOSIT</button>
+<button class="btn" onclick="openDeposit()">DEPOSIT</button>
 
 <button class="btn"> SGL PARIAGE</button>
 
@@ -257,6 +257,40 @@ function openTopup() {
 function closeTopup() {
   document.getElementById("topupModal").style.display = "none";
 }
+</script><div id="depositModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999;">
+
+  <div style="background:white; width:300px; margin:60px auto; padding:20px; border-radius:15px;">
+
+    <span onclick="closeDeposit()" style="float:right; cursor:pointer; font-size:20px;">X</span>
+
+    <h2 style="text-align:center;">Deposit</h2>
+
+    <input type="text" placeholder="Nom du client" style="width:100%; margin-bottom:10px; padding:10px;">
+
+    <input type="text" placeholder="Téléphone" style="width:100%; margin-bottom:10px; padding:10px;">
+
+    <input type="number" placeholder="Montant MXN" style="width:100%; margin-bottom:10px; padding:10px;">
+
+    <input type="text" placeholder="Méthode de paiement" style="width:100%; margin-bottom:10px; padding:10px;">
+
+    <button style="width:100%; padding:10px; background:#2196f3; color:white; border:none; border-radius:10px;">
+      Soumettre
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+function openDeposit() {
+  document.getElementById("depositModal").style.display = "block";
+}
+
+function closeDeposit() {
+  document.getElementById("depositModal").style.display = "none";
+}
+
 </script>
 </body>
 </html>
