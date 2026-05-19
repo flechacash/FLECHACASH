@@ -265,7 +265,44 @@ Soumettre
 
 </div>
 </div>
+<!-- TOP UP -->
+<div id="topupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('topupModal')">&times;</span>
+    <h2>TOP UP</h2>
 
+    <input type="text" placeholder="Numéro téléphone">
+    <input type="number" placeholder="Montant">
+
+    <button class="submit-btn">Envoyer</button>
+  </div>
+</div>
+
+<!-- DEPOSIT -->
+<div id="depositModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('depositModal')">&times;</span>
+    <h2>DEPOSIT</h2>
+
+    <input type="text" placeholder="Nom du client">
+    <input type="number" placeholder="Montant">
+
+    <button class="submit-btn">Envoyer</button>
+  </div>
+</div>
+
+<!-- SGL PARIAGE -->
+<div id="sglModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('sglModal')">&times;</span>
+    <h2>SGL PARIAGE</h2>
+
+    <input type="text" placeholder="Nom joueur">
+    <input type="number" placeholder="Montant">
+
+    <button class="submit-btn">Envoyer</button>
+  </div>
+</div>
 <script>
 
 function openModal(id){
