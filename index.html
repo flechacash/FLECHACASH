@@ -316,7 +316,21 @@ document.getElementById(id).style.display="none";
 function countrySelected(country){
 console.log("Pays sélectionné:",country);
 }
+function calculerTopup(){
 
+let montant = document.getElementById("montantTopup").value || 0;
+
+let commission = montant * 0.05;
+
+let recevoir = montant - commission;
+
+document.getElementById("commissionTopup").innerHTML =
+"Commission pour agent " + commission.toFixed(2) + " MXN";
+
+document.getElementById("recevoirTopup").innerHTML =
+"Le montant à recevoir est de " + recevoir.toFixed(2);
+
+}
 </script>
 
 </body>
