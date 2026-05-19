@@ -329,8 +329,26 @@ document.getElementById("commissionTopup").innerHTML =
 
 document.getElementById("recevoirTopup").innerHTML =
 "Le montant à recevoir est de " + recevoir.toFixed(2);
-
 }
+function envoyerTopup(){
+
+  let pays = document.getElementById("paysTopup").value;
+  let telephone = document.getElementById("telephoneTopup").value;
+  let compagnie = document.getElementById("compagnieTopup").value;
+  let montant = document.getElementById("montantTopup").value;
+
+  let message =
+    "TOP UP%0A" +
+    "Pays: " + pays + "%0A" +
+    "Téléphone: " + telephone + "%0A" +
+    "Compagnie: " + compagnie + "%0A" +
+    "Montant envoyé: " + montant + " MXN";
+
+  window.location.href =
+  "https://wa.me/5219617163082?text=" + message;
+}
+
+</script>
 </script>
 
 </body>
