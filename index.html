@@ -269,20 +269,33 @@ Soumettre
 <div id="topupModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('topupModal')">&times;</span>
-    <h2>TOP UP</h2>
+    <h2>TOP UP</h2> <select id="paysTopup">
+  <option value="">Pays</option>
+  <option>Haïti</option>
+  <option>Mexique</option>
+</select>
 
-    <input type="text" placeholder="Numéro téléphone">
-    <input type="number" placeholder="Montant">
+<input id="telephoneTopup" type="text" placeholder="Téléphone">
 
+<input id="compagnieTopup" type="text" placeholder="Compagnie">
+
+<input id="montantTopup"
+type="number"
+placeholder="Montant envoyé (MXN)"
+oninput="calculerTopup()">
+
+<p id="commissionTopup"></p>
+
+<p id="recevoirTopup"></p> <button class="submit-btn" onclick="envoyerTopup()">
+Envoyer
+</button>
     <button class="submit-btn">Envoyer</button>
   </div>
 </div>
-
-<!-- DEPOSIT -->
 <div id="depositModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('depositModal')">&times;</span>
-    <h2>DEPOSIT</h2>
+    <h2>DEPOSIT</h2> 
 
     <input type="text" placeholder="Nom du client">
     <input type="number" placeholder="Montant">
