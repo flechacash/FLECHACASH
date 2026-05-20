@@ -360,15 +360,27 @@ function envoyerTopup(){
 </script>
 
 <script>
+
 function toggleTopupCountryList(){
-  const list = document.getElementById("topupCountryList");
-  list.style.display = list.style.display === "none" ? "block" : "none";
+
+const list =
+document.getElementById("topupCountryList");
+if(list.style.display === "block"){
+    list.style.display = "none";
+}else{
+    list.style.display = "block";
+}
 }
 
 function selectTopupCountry(country){
-  document.getElementById("topupCountryInput").value = country;
-  document.getElementById("topupCountryList").style.display = "none";
+
+document.getElementById("topupCountryInput").value = country;
+
+document.getElementById("topupCountryList").style.display = "none";
+
 }
+
+</script>
 </script>
 
 </body>
