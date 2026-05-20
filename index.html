@@ -368,7 +368,27 @@ function envoyerTopup(){
 
   window.location.href =
   "https://wa.me/5219617163082?text=" + message;}
-</script>
+</script> function toggleTopupCountryList(){
+  let list = document.getElementById("topupCountryList");
+  list.style.display =
+  list.style.display === "none" ? "block" : "none";
+}
+
+function selectTopupCountry(country){
+  document.getElementById("topupCountryInput").value = country;
+  document.getElementById("topupCountryList").style.display = "none";
+}
+
+function toggleDepositCountryList(){
+  let list = document.getElementById("depositCountryList");
+  list.style.display =
+  list.style.display === "none" ? "block" : "none";
+}
+
+function selectDepositCountry(country){
+  document.getElementById("depositCountryInput").value = country;
+  document.getElementById("depositCountryList").style.display = "none";
+}
 
 </body>
 </html>
