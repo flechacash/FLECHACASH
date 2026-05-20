@@ -381,6 +381,21 @@ document.getElementById("topupCountryList").style.display = "none";
 }
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
+  const input = document.getElementById("topupCountryInput");
+  const list = document.getElementById("topupCountryList");
+
+  input.addEventListener("click", function(){
+    if(list.style.display === "block"){
+      list.style.display = "none";
+    }else{
+      list.style.display = "block";
+    }
+  });
+
+});
+</script>
 </body>
 </html>
