@@ -261,30 +261,18 @@ Soumettre
 <div id="topupModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('topupModal')">&times;</span>
-    <h2>TOP UP</h2> <select id="paysTopup"> 
-<select id="paysTopup">
-  <option value="">Pays</option>
-  <option>Haïti</option>
-  <option>Mexique</option>
-  <option>États-Unis</option>
-  <option>Canada</option>
-  <option>Chili</option>
-  <option>Brésil</option>
-  <option>République Dominicaine</option>
-  <option>France</option>
-  <option>Panama</option>
-  <option>Colombie</option>
-  <option>Venezuela</option>
-  <option>Pérou</option>
-  <option>Argentine</option>
-  <option>Guatemala</option>
-  <option>Honduras</option>
-  <option>Salvador</option>
-  <option>Nicaragua</option>
-  <option>Costa Rica</option>
-  <option>Équateur</option>
-</select> 
+    <h2>TOP UP</h2>
+<input type="text" id="topupCountryInput" placeholder="🌍 Pays" readonly onclick="toggleTopupCountryList()" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;margin-bottom:12px;cursor:pointer;">
 
+<div id="topupCountryList" style="display:none;max-height:180px;overflow-y:auto;border:1px solid #ccc;border-radius:12px;margin-bottom:12px;background:white;">
+  <div onclick="selectTopupCountry('🇭🇹 Haïti +509')" style="padding:12px;cursor:pointer;">🇭🇹 Haïti +509</div>
+  <div onclick="selectTopupCountry('🇲🇽 Mexique +52')" style="padding:12px;cursor:pointer;">🇲🇽 Mexique +52</div>
+  <div onclick="selectTopupCountry('🇺🇸 États-Unis +1')" style="padding:12px;cursor:pointer;">🇺🇸 États-Unis +1</div>
+  <div onclick="selectTopupCountry('🇨🇦 Canada +1')" style="padding:12px;cursor:pointer;">🇨🇦 Canada +1</div>
+  <div onclick="selectTopupCountry('🇩🇴 République Dominicaine +1')" style="padding:12px;cursor:pointer;">🇩🇴 République Dominicaine +1</div>
+  <div onclick="selectTopupCountry('🇨🇴 Colombie +57')" style="padding:12px;cursor:pointer;">🇨🇴 Colombie +57</div>
+  <div onclick="selectTopupCountry('🇻🇪 Venezuela +58')" style="padding:12px;cursor:pointer;">🇻🇪 Venezuela +58</div>
+</div>
 <input id="telephoneTopup" type="text" placeholder="Téléphone">
 
 <input id="compagnieTopup" type="text" placeholder="Compagnie">
