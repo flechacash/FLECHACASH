@@ -263,14 +263,23 @@ Soumettre
     <span class="close" onclick="closeModal('topupModal')">&times;</span>
     <h2>TOP UP</h2>
 <input type="text" id="topupCountryInput" placeholder="🌍 Pays" readonly onclick="document.getElementById('topupCountryList').style.display='block'" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;margin-bottom:12px;cursor:pointer;">
-<div id="topupCountryList" style="display:none;max-height:180px;overflow-y:auto;border:1px solid #ccc;border-radius:12px;margin-bottom:12px;background:white;">
- <div onclick="document.getElementById('topupCountryInput').value='🇭🇹 Haïti +509';document.getElementById('topupCountryList').style.display='none';" style="padding:12px;cursor:pointer;">🇭🇹 Haïti +509</div>
+<div id="topupCountryList" style="display:none;max-height:180px;overflow-y:auto;border:1px solid #ccc;border-radius:12px;margin-bottom:12px;">
 
-<div onclick="document.getElementById('topupCountryInput').value='🇲🇽 Mexique +52';document.getElementById('topupCountryList').style.display='none';" style="padding:12px;cursor:pointer;">🇲🇽 Mexique +52</div>
+<div onclick="selectTopupCountry('HT Haïti +509')" style="padding:12px;cursor:pointer;">🇭🇹 Haïti +509</div>
 
-<div onclick="document.getElementById('topupCountryInput').value='🇺🇸 États-Unis +1';document.getElementById('topupCountryList').style.display='none';" style="padding:12px;cursor:pointer;">🇺🇸 États-Unis +1</div>
+<div onclick="selectTopupCountry('MX Mexique +52')" style="padding:12px;cursor:pointer;">🇲🇽 Mexique +52</div>
 
-<div onclick="document.getElementById('topupCountryInput').value='🇨🇦 Canada +1';document.getElementById('topupCountryList').style.display='none';" style="padding:12px;cursor:pointer;">🇨🇦 Canada +1</div>
+<div onclick="selectTopupCountry('US États-Unis +1')" style="padding:12px;cursor:pointer;">🇺🇸 États-Unis +1</div>
+
+<div onclick="selectTopupCountry('CA Canada +1')" style="padding:12px;cursor:pointer;">🇨🇦 Canada +1</div>
+
+<div onclick="selectTopupCountry('DO République Dominicaine +1')" style="padding:12px;cursor:pointer;">🇩🇴 République Dominicaine +1</div>
+
+<div onclick="selectTopupCountry('CO Colombie +57')" style="padding:12px;cursor:pointer;">🇨🇴 Colombie +57</div>
+
+<div onclick="selectTopupCountry('VE Venezuela +58')" style="padding:12px;cursor:pointer;">🇻🇪 Venezuela +58</div>
+
+</div>
   <div onclick="selectTopupCountry('🇻🇪 Venezuela +58')" style="padding:12px;cursor:pointer;">🇻🇪 Venezuela +58</div>
 </div>
 <input id="telephoneTopup" type="text" placeholder="Téléphone">
