@@ -195,28 +195,16 @@ box-shadow:0 2px 8px rgba(0,0,0,0.2);
 <span class="close" onclick="closeModal('moncashModal')">&times;</span>
 
 <h2>MonCash</h2>
-
-<select onchange="countrySelected(this.value)" style="
-width:100%;
-padding:12px;
-border-radius:10px;
-border:1px solid #ccc;
-margin-bottom:12px;">
-<option value="">Choisir un pays</option>
-<option>🇭🇹 Haïti +509</option>
-<option>🇩🇴 République Dominicaine +1</option>
-<option>🇨🇺 Cuba +53</option>
-<option>🇯🇲 Jamaïque +1</option>
-<option>🇺🇸 United States +1</option>
-<option>🇨🇦 Canada +1</option>
-<option>🇲🇽 México +52</option>
-<option>🇨🇴 Colombia +57</option>
-<option>🇧🇷 Brazil +55</option>
-<option>🇦🇷 Argentina +54</option>
-<option>🇨🇱 Chile +56</option>
-
-</select>
-
+<input type="text" id="topupCountryInput" placeholder="🌍 Pays" readonly onclick="toggleTopupCountryList()" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;margin-bottom:8px;font-size:16px;">
+<div id="topupCountryList" style="display:none;max-height:180px;overflow-y:auto;border:1px solid #ccc;border-radius:12px;margin-bottom:12px;background:white;">
+  <div onclick="selectTopupCountry('🇭🇹 Haïti +509')" style="padding:12px;cursor:pointer;">🇭🇹 Haïti +509</div>
+  <div onclick="selectTopupCountry('🇲🇽 Mexique +52')" style="padding:12px;cursor:pointer;">🇲🇽 Mexique +52</div>
+  <div onclick="selectTopupCountry('🇺🇸 États-Unis +1')" style="padding:12px;cursor:pointer;">🇺🇸 États-Unis +1</div>
+  <div onclick="selectTopupCountry('🇨🇦 Canada +1')" style="padding:12px;cursor:pointer;">🇨🇦 Canada +1</div>
+  <div onclick="selectTopupCountry('🇩🇴 République Dominicaine +1')" style="padding:12px;cursor:pointer;">🇩🇴 République Dominicaine +1</div>
+  <div onclick="selectTopupCountry('🇨🇴 Colombie +57')" style="padding:12px;cursor:pointer;">🇨🇴 Colombie +57</div>
+  <div onclick="selectTopupCountry('🇻🇪 Venezuela +58')" style="padding:12px;cursor:pointer;">🇻🇪 Venezuela +58</div>
+</div>
 <input type="text" placeholder="Expéditeur">
 
 <input type="text" placeholder="Téléphone">
@@ -380,10 +368,19 @@ function envoyerTopup(){
     "Montant envoyé: " + montant + " MXN";
 
   window.location.href =
-  "https://wa.me/5219617163082?text=" + message;
+  "https://wa.me/5219617163082?text=" + message;}
+</script>
+
+<script>
+function toggleTopupCountryList(){
+  const list = document.getElementById("topupCountryList");
+  list.style.display = list.style.display === "none" ? "block" : "none";
 }
 
-</script>
+function selectTopupCountry(country){
+  document.getElementById("topupCountryInput").value = country;
+  document.getElementById("topupCountryList").style.display = "none";
+}
 </script>
 
 </body>
