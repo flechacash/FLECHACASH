@@ -391,15 +391,12 @@ function selectDepositCountry(country){
     document.getElementById("depositCountryInput").value = country;
     document.getElementById("depositCountryList").style.display = "none";
 }
+function openModal(id){
+    document.getElementById(id).style.display = "block";
 }
-function toggleDepositCountryList(){
-  let list = document.getElementById("depositCountryList");
-  list.style.display =
-  list.style.display === "none" ? "block" : "none";
-}
-function selectDepositCountry(country){
-  document.getElementById("depositCountryInput").value = country;
-  document.getElementById("depositCountryList").style.display = "none";
+
+function closeModal(id){
+    document.getElementById(id).style.display = "none";
 }
 </script>
 </body>
