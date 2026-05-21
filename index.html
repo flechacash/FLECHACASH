@@ -195,7 +195,7 @@ box-shadow:0 2px 8px rgba(0,0,0,0.2);
 <span class="close" onclick="closeModal('moncashModal')">&times;</span>
 
 <h2>MonCash</h2>
-<input type="text" id="moncashCountryInput" placeholder="🌐 Pays" readonly onclick="toggleTopupCountryList()">
+<input type="text" id="moncashCountryInput" placeholder="🌐 Pays" onclick="toggleTopupCountryList()">
 <div id="topupCountryList" style="display:none;max-height:180px;overflow-y:auto;border:1px solid #ccc;border-radius:12px;margin-bottom:12px;background:white;">
   <div onclick="selectTopupCountry('🇭🇹 Haïti +509')" style="padding:12px;cursor:pointer;">🇭🇹 Haïti +509</div>
   <div onclick="selectTopupCountry('🇲🇽 Mexique +52')" style="padding:12px;cursor:pointer;">🇲🇽 Mexique +52</div>
@@ -366,25 +366,37 @@ function envoyerTopup(){
     "Compagnie: " + compagnie + "%0A" +
     "Montant envoyé: " + montant + " MXN";
 
-  window.location.href =
-  "https://wa.me/5219617163082?text=" + message;}
- function toggleTopupCountryList(){
-  let list = document.getElementById("topupCountryList");
-  list.style.display =
-  list.style.display === "none" ? "block" : "none";
+window.location.href =
+"https://wa.me/5219617163082?text=" + message;
+}
+
+function toggleTopupCountryList(){
+    let list = document.getElementById("topupCountryList");
+    list.style.display =
+    list.style.display === "none" ? "block" : "none";
 }
 
 function selectTopupCountry(country){
-  document.getElementById("topupCountryInput").value = country;
-  document.getElementById("topupCountryList").style.display = "none";
+    document.getElementById("topupCountryInput").value = country;
+    document.getElementById("topupCountryList").style.display = "none";
 }
 
+function toggleDepositCountryList(){
+    let list = document.getElementById("depositCountryList");
+    list.style.display =
+    list.style.display === "none" ? "block" : "none";
+}
+
+function selectDepositCountry(country){
+    document.getElementById("depositCountryInput").value = country;
+    document.getElementById("depositCountryList").style.display = "none";
+}
+}
 function toggleDepositCountryList(){
   let list = document.getElementById("depositCountryList");
   list.style.display =
   list.style.display === "none" ? "block" : "none";
 }
-
 function selectDepositCountry(country){
   document.getElementById("depositCountryInput").value = country;
   document.getElementById("depositCountryList").style.display = "none";
